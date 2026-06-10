@@ -3,7 +3,7 @@
 An interactive visualizer for sorting and searching algorithms with step-by-step pseudocode highlighting.
 
 ## 🔴 Live Demo
-👉 [View Live]https://dsa-visualizer-beta-sepia.vercel.app/
+👉 [View Live](https://dsa-visualizer-beta-sepia.vercel.app/)
 
 ## 🧠 Algorithms Included
 
