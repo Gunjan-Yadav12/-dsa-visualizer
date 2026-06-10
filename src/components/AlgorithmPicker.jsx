@@ -7,6 +7,7 @@ export default function AlgorithmPicker({ algorithm, onChange }) {
         <option value="merge">Merge Sort</option>
         <option value="quick">Quick Sort</option>
         <option value="binary">Binary Search</option>
+        <option value="insertion">Insertion Sort</option>
       </select>
     </div>
   )
