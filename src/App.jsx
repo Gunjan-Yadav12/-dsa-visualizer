@@ -19,6 +19,7 @@ const ALGORITHMS = {
   quick:     generateQuickSortSteps,
   binary:    (arr, target) => generateBinarySearchSteps(arr, target),
   insertion: generateInsertionSortSteps,
+  heap: generateHeapSortSteps,
 }
 
 const PSEUDOCODES = {
@@ -28,6 +29,7 @@ const PSEUDOCODES = {
   quick:     QUICK_SORT_PSEUDOCODE,
   binary:    BINARY_SEARCH_PSEUDOCODE,
   insertion: INSERTION_SORT_PSEUDOCODE,
+  heap: HEAP_SORT_PSEUDOCODE,
 }
 const COMPLEXITY = {
   bubble:    { best: 'O(n)', average: 'O(n²)', worst: 'O(n²)', space: 'O(1)' },
@@ -36,6 +38,7 @@ const COMPLEXITY = {
   quick:     { best: 'O(n log n)', average: 'O(n log n)', worst: 'O(n²)', space: 'O(log n)' },
   binary:    { best: 'O(1)', average: 'O(log n)', worst: 'O(log n)', space: 'O(1)' },
   insertion: { best: 'O(n)', average: 'O(n²)', worst: 'O(n²)', space: 'O(1)' },
+  heap: { best: 'O(n log n)', average: 'O(n log n)', worst: 'O(n log n)', space: 'O(1)' },
 }
 
 function generateRandomArray(size = 20) {

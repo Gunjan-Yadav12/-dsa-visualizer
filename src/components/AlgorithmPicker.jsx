@@ -8,6 +8,7 @@ export default function AlgorithmPicker({ algorithm, onChange }) {
         <option value="quick">Quick Sort</option>
         <option value="binary">Binary Search</option>
         <option value="insertion">Insertion Sort</option>
+        <option value="heap">Heap Sort</option>
       </select>
     </div>
   )
