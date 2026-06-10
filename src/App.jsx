@@ -9,6 +9,7 @@ import { generateSelectionSortSteps, SELECTION_SORT_PSEUDOCODE } from './algorit
 import { generateMergeSortSteps, MERGE_SORT_PSEUDOCODE } from './algorithms/mergeSort'
 import { generateQuickSortSteps, QUICK_SORT_PSEUDOCODE } from './algorithms/quickSort'
 import { generateBinarySearchSteps, BINARY_SEARCH_PSEUDOCODE } from './algorithms/binarySearch'
+import { generateInsertionSortSteps, INSERTION_SORT_PSEUDOCODE } from './algorithms/insertionSort'
 import './App.css'
 
 const ALGORITHMS = {
@@ -17,6 +18,7 @@ const ALGORITHMS = {
   merge:     generateMergeSortSteps,
   quick:     generateQuickSortSteps,
   binary:    (arr, target) => generateBinarySearchSteps(arr, target),
+  insertion: generateInsertionSortSteps,
 }
 
 const PSEUDOCODES = {
@@ -25,6 +27,7 @@ const PSEUDOCODES = {
   merge:     MERGE_SORT_PSEUDOCODE,
   quick:     QUICK_SORT_PSEUDOCODE,
   binary:    BINARY_SEARCH_PSEUDOCODE,
+  insertion: INSERTION_SORT_PSEUDOCODE,
 }
 
 function generateRandomArray(size = 20) {
