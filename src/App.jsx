@@ -29,6 +29,14 @@ const PSEUDOCODES = {
   binary:    BINARY_SEARCH_PSEUDOCODE,
   insertion: INSERTION_SORT_PSEUDOCODE,
 }
+const COMPLEXITY = {
+  bubble:    { best: 'O(n)', average: 'O(n²)', worst: 'O(n²)', space: 'O(1)' },
+  selection: { best: 'O(n²)', average: 'O(n²)', worst: 'O(n²)', space: 'O(1)' },
+  merge:     { best: 'O(n log n)', average: 'O(n log n)', worst: 'O(n log n)', space: 'O(n)' },
+  quick:     { best: 'O(n log n)', average: 'O(n log n)', worst: 'O(n²)', space: 'O(log n)' },
+  binary:    { best: 'O(1)', average: 'O(log n)', worst: 'O(log n)', space: 'O(1)' },
+  insertion: { best: 'O(n)', average: 'O(n²)', worst: 'O(n²)', space: 'O(1)' },
+}
 
 function generateRandomArray(size = 20) {
   return Array.from({ length: size }, () => Math.floor(Math.random() * 90) + 10)
@@ -116,42 +124,49 @@ export default function App() {
   }, [isPlaying, speed, steps.length])
 
   return (
-    <div className="app">
-      <h1>⚡ DSA Visualizer</h1>
+  <div className="app">
+    <h1> DSA Visualizer</h1>
 
-      <AlgorithmPicker algorithm={algorithm} onChange={handleAlgorithmChange} />
+    <AlgorithmPicker algorithm={algorithm} onChange={handleAlgorithmChange} />
 
-      <Controls
-        isPlaying={isPlaying}
-        hasSteps={steps.length > 0}
-        currentStepIndex={currentStepIndex}
-        totalSteps={steps.length}
-        speed={speed}
-        algorithm={algorithm}
-        searchTarget={searchTarget}
-        onStart={handleStart}
-        onPause={handlePause}
-        onReset={handleReset}
-        onNext={handleNext}
-        onPrev={handlePrev}
-        onSpeedChange={setSpeed}
-        onGenerateArray={handleGenerateArray}
-        onSearchTargetChange={setSearchTarget}
-      />
+    <div className="complexity-bar">
+      <span>Best: <strong>{COMPLEXITY[algorithm].best}</strong></span>
+      <span>Average: <strong>{COMPLEXITY[algorithm].average}</strong></span>
+      <span>Worst: <strong>{COMPLEXITY[algorithm].worst}</strong></span>
+      <span>Space: <strong>{COMPLEXITY[algorithm].space}</strong></span>
+    </div>
 
-      <div className="visualizer-row">
-        <Visualizer step={currentStep} />
-        <PseudocodePanel
-          pseudocode={PSEUDOCODES[algorithm]}
-          activeLine={currentStep.activeLine ?? -1}
-        />
-      </div>
+    <Controls
+      isPlaying={isPlaying}
+      hasSteps={steps.length > 0}
+      currentStepIndex={currentStepIndex}
+      totalSteps={steps.length}
+      speed={speed}
+      algorithm={algorithm}
+      searchTarget={searchTarget}
+      onStart={handleStart}
+      onPause={handlePause}
+      onReset={handleReset}
+      onNext={handleNext}
+      onPrev={handlePrev}
+      onSpeedChange={setSpeed}
+      onGenerateArray={handleGenerateArray}
+      onSearchTargetChange={setSearchTarget}
+    />
 
-      <StatsPanel
-        stats={stats}
-        currentStepIndex={currentStepIndex}
-        totalSteps={steps.length}
+    <div className="visualizer-row">
+      <Visualizer step={currentStep} />
+      <PseudocodePanel
+        pseudocode={PSEUDOCODES[algorithm]}
+        activeLine={currentStep.activeLine ?? -1}
       />
     </div>
-  )
+
+    <StatsPanel
+      stats={stats}
+      currentStepIndex={currentStepIndex}
+      totalSteps={steps.length}
+    />
+  </div>
+)
 }
