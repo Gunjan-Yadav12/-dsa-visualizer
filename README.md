@@ -1,16 +1,62 @@
-# React + Vite
+# ⚡ DSA Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive visualizer for sorting and searching algorithms with step-by-step pseudocode highlighting.
 
-Currently, two official plugins are available:
+## 🔴 Live Demo
+👉 [View Live]https://dsa-visualizer-beta-sepia.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🧠 Algorithms Included
 
-## React Compiler
+| Algorithm | Type | Time Complexity |
+|-----------|------|----------------|
+| Bubble Sort | Sorting | O(n²) |
+| Selection Sort | Sorting | O(n²) |
+| Merge Sort | Sorting | O(n log n) |
+| Quick Sort | Sorting | O(n log n) avg |
+| Binary Search | Searching | O(log n) |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- Step-by-step animation with Play / Pause / Reset controls
+- Previous and Next step buttons for manual stepping
+- Speed control slider
+- **Pseudocode panel** — highlights the exact line executing at each step
+- Color coded bars — yellow = comparing, red = swapping, green = sorted, purple = pivot
+- Algorithm statistics — comparisons, swaps, progress
+- Binary Search target input
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 How to Run Locally
+
+```bash
+git clone https://github.com/Gunjan-Yadav12/-dsa-visualizer.git
+cd dsa-visualizer
+npm install
+npm run dev
+```
+
+Open `http://localhost:5173` in your browser.
+
+## 🛠 Tech Stack
+
+React · Vite · CSS · JavaScript
+
+## 📁 Project Structure
+
+    dsa-visualizer/
+    ├── src/
+    │   ├── algorithms/       ← pure JS, no React (bubbleSort, mergeSort etc.)
+    │   ├── components/       ← React components (Visualizer, Controls etc.)
+    │   ├── hooks/            ← custom hooks
+    │   ├── App.jsx           ← root component, owns all state
+    │   └── App.css
+    └── index.html
+
+## 🎨 Color Guide
+
+| Color | Meaning |
+|-------|---------|
+| 🟡 Yellow | Currently comparing |
+| 🔴 Red | Currently swapping |
+| 🟢 Green | Sorted / found |
+| 🟣 Purple | Pivot element |
+| 🔵 Blue | Default |
