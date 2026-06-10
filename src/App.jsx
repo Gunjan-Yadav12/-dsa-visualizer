@@ -10,6 +10,7 @@ import { generateMergeSortSteps, MERGE_SORT_PSEUDOCODE } from './algorithms/merg
 import { generateQuickSortSteps, QUICK_SORT_PSEUDOCODE } from './algorithms/quickSort'
 import { generateBinarySearchSteps, BINARY_SEARCH_PSEUDOCODE } from './algorithms/binarySearch'
 import { generateInsertionSortSteps, INSERTION_SORT_PSEUDOCODE } from './algorithms/insertionSort'
+import { generateHeapSortSteps, HEAP_SORT_PSEUDOCODE } from './algorithms/heapSort'
 import './App.css'
 
 const ALGORITHMS = {
